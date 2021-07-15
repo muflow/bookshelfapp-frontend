@@ -7,7 +7,8 @@ class ApiClient {
 			withCredentials: true,
 		});
 	}
-
+	
+	// User
 	me() {
 		return this.apiClient.get('/whoami').then(response => response.data);
 	}
@@ -24,6 +25,16 @@ class ApiClient {
 
 	logout() {
 		return this.apiClient.post('/logout', {}).then(response => response.data);
+	}
+	// end
+
+	// Books
+	findAllBooks() {
+	return this.apiClient.get("/books").then(({ data }) => data);
+	}
+
+	createBook(body) {
+	return this.apiClient.post("/books", body).then(({ data }) => data);
 	}
 }
 
