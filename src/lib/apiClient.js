@@ -33,9 +33,23 @@ class ApiClient {
 	return this.apiClient.get("/books").then(({ data }) => data);
 	}
 
-	createBook(body) {
-	return this.apiClient.post("/books", body).then(({ data }) => data);
+		// Find book
+	findOneBook(id) {
+	return this.apiClient.get(`/books/${id}`).then(({ data }) => data);
 	}
+
+	createBook(book) {
+	const {title, author} = book;
+	return this.apiClient.post("/books", { title, author }).then(({ data }) => data);
+	}
+
+	// User
+
+	findAllUsers() {
+	return this.apiClient.get("/user/profile").then(({ data }) => data);
+	}
+
+	
 }
 
 const apiClient = new ApiClient();
