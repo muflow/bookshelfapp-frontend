@@ -43,10 +43,22 @@ class ApiClient {
 	return this.apiClient.post("/books", { title, author }).then(({ data }) => data);
 	}
 
-	// User
+	deleteOneBook(id) {
+	return this.apiClient.delete(`/books/${id}`).then(({ data }) => data);
+	}
 
-	findAllUsers() {
-	return this.apiClient.get("/user/profile").then(({ data }) => data);
+	editOneBook(id, body) {
+	const { title, author } = body;
+	return this.apiClient.put(`/books/${id}`, { title, author }).then(({ data }) => data);
+	}
+
+
+
+	// User profile
+
+	userProfile(user) {
+	const { username } = user;
+	return this.apiClient.get("/user/profile", { username }).then(({ data }) => data);
 	}
 
 	

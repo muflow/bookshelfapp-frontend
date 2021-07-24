@@ -35,9 +35,7 @@ class Home extends React.Component {
             .catch(err => console.log(err))
     }
 
-	
-
-    render() {
+     render() {
 			const { books } = this.state;
       return (
         <>

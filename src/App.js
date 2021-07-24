@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Favs from './pages/Favs'
 import Profile from './pages/Porfile';
 import BookDetails from './components/BookDetails';
+import EditBookInput from './components/EditBookInput'
 
 import AddBookInput from './components/AddBookInput';
 
@@ -28,17 +29,21 @@ class App extends Component {
 			<div className="container">
 				<h1>My Books app</h1>
 				
+				
 				{/* <Navbar /> */}
 				<Switch>
-					<Route exact path="/home" component={Home} />
+					<Route exact path="/books" component={Home} />
 					<PrivateRoute exact path="/profile" component={Profile} />
 					<AnonRoute path="/signup" component={Signup} />
 					<AnonRoute path="/login" component={Login} />
 					<PrivateRoute exact path="/books/new" component={AddBookInput} />
+					<PrivateRoute exact path="/books/edit/:bookId" component={EditBookInput} />
 					<PrivateRoute exact path="/books/:bookId" component={BookDetails} />
+					<PrivateRoute exact path="/favs" component={Favs} />
 					<PrivateRoute path="/private" component={Private} />
+					<PrivateRoute path="/profile" component={Profile} />
 					<Route path="/" component={Splashscreen} />
-					{/* <PrivateRoute  exact path="/home/:id" component={BookDetails} /> */}
+					
 					
 					<Route path="/favorites" component={Favs} />
 				</Switch>

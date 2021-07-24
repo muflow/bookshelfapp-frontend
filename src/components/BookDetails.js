@@ -1,6 +1,8 @@
 import React from 'react';
 import apiClient from '../lib/apiClient';
 
+import { Link } from 'react-router-dom';
+
 class BookDetails extends React.Component {
   constructor(props) {
     super(props)
@@ -11,10 +13,7 @@ class BookDetails extends React.Component {
 
   componentDidMount = async () => {
     const {bookId} = this.props.match.params;
-    console.log(bookId);
-    // try catch 
-    // conectarte a apiClient.findOneBook(bookId)
-    // subir al estado los datos del libro al estado (setState)
+    
     try{
       const oneBook = await apiClient.findOneBook(bookId);
       console.log(oneBook);
@@ -26,20 +25,29 @@ class BookDetails extends React.Component {
     catch (error) {
           console.log(error)
         }
+  }
 
-    // en el render pinto los datos del estado
+  handleDelete = async() => {
+    try{
+      await apiClient.deleteOneBook(this.state.book._id);
+    }
+    catch (error) {
+          console.log(error)
+        } finally {
+          this.props.history.push("/books");
+        }
   }
   
   render() {
-    const { title, author } = this.state.book;
+    const { title, author, _id } = this.state.book;
     return (
       <div>
       <h3>Title: {title}</h3>
       <p>Author: {author}</p>
       <p>Descritpion: </p>
       <p>Category: </p>
-      <button>Edit book</button>
-      <button>Delete book</button>
+      <Link to={`/books/edit/${_id}`}>Edit book</ Link>
+      <button onClick={() => this.handleDelete(this.props.id)}>Delete book</button>
       </div>
     );
   }

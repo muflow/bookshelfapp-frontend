@@ -17,20 +17,15 @@ class AddBookInput extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
         const { title, author } = this.state;
-         
         try{
-          // apiClient.createBook({title, author}).then((book) =>
-          //   console.log('Founded book:', book); // haz un redirect a la home
-          // );
-          // z.then((book) =>
-          const newBook = await apiClient.createBook({title, author});
-          console.log(newBook);
+          await apiClient.createBook({title, author});
+          
       }
         catch (error) {
           console.log(error)
         } finally {
         
-          this.props.history.push("/home");
+          this.props.history.push("/books");
         }
         
     }
