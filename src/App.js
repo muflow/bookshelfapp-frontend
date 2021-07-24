@@ -28,8 +28,6 @@ class App extends Component {
 		return (
 			<div className="container">
 				<h1>My Books app</h1>
-				
-				
 				{/* <Navbar /> */}
 				<Switch>
 					<Route exact path="/books" component={Home} />
@@ -43,12 +41,8 @@ class App extends Component {
 					<PrivateRoute path="/private" component={Private} />
 					<PrivateRoute path="/profile" component={Profile} />
 					<Route path="/" component={Splashscreen} />
-					
-					
 					<Route path="/favorites" component={Favs} />
 				</Switch>
-				
-				
 			</div>
 		);
 	}

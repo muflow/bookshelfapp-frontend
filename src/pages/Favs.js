@@ -1,6 +1,6 @@
 import React from 'react';
-
 import BookCard from '../components/BookCard';
+import apiClient from '../lib/apiClient';
 
 class Favs extends React.Component {
   constructor(props) {
@@ -10,21 +10,30 @@ class Favs extends React.Component {
     }
   }
 
+  componentDidMount = async() => {
+    try {
+      const user = await apiClient.getUsersFavBooks();
+      this.setState({
+        favBooks: user.favBooks
+      })
+      console.log(user)
+    } catch(error){
+      console.log(error)
+    }
+  }
+
   render() {
     const { favBooks } = this.state;
     return (
       <div>
         <h1>Favorite books</h1>
-        <p>Favoritos es una ruta de api client</p>
-        
+        <p>These are your favourite books:</p>
         {favBooks.map(book => {
 					return (
             <BookCard book={book} key={book._id}
             />
           );
 				})}
-
-        <p>Tengo usuario e id del libro, se la paso por url, Handle favourite addToFavortieList e redirect</p>
       </div>
     )
   }

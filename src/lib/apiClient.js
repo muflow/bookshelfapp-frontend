@@ -35,29 +35,34 @@ class ApiClient {
 
 		// Find book
 	findOneBook(id) {
-	return this.apiClient.get(`/books/${id}`).then(({ data }) => data);
+		return this.apiClient.get(`/books/${id}`).then(({ data }) => data);
 	}
 
 	createBook(book) {
 	const {title, author} = book;
-	return this.apiClient.post("/books", { title, author }).then(({ data }) => data);
+		return this.apiClient.post("/books", { title, author }).then(({ data }) => data);
 	}
 
 	deleteOneBook(id) {
-	return this.apiClient.delete(`/books/${id}`).then(({ data }) => data);
+		return this.apiClient.delete(`/books/${id}`).then(({ data }) => data);
 	}
 
 	editOneBook(id, body) {
-	const { title, author } = body;
-	return this.apiClient.put(`/books/${id}`, { title, author }).then(({ data }) => data);
+		const { title, author } = body;
+		return this.apiClient.put(`/books/${id}`, { title, author }).then(({ data }) => data);
 	}
 
-	addToFavs(id, body) {
-	const { title, author } = body;
-	return this.apiClient.put(`/favs/${id}`, { title, author }).then(({ data }) => data);
+	addToFavs(id) {
+		return this.apiClient.post(`/user/favs/${id}`).then(({ data }) => data);
 	}
 
+	getUsersFavBooks(){
+		return this.apiClient.get(`/user/favs`).then(({ data }) => data);
+	}
 
+	getUsersFavBooksIds(){
+		return this.apiClient.get(`/user/favids`).then(({ data }) => data);
+	}
 
 	// User profile
 
