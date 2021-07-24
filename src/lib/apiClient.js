@@ -52,6 +52,11 @@ class ApiClient {
 	return this.apiClient.put(`/books/${id}`, { title, author }).then(({ data }) => data);
 	}
 
+	addToFavs(id, body) {
+	const { title, author } = body;
+	return this.apiClient.put(`/favs/${id}`, { title, author }).then(({ data }) => data);
+	}
+
 
 
 	// User profile

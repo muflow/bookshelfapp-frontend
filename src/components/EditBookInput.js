@@ -31,7 +31,6 @@ class EditBookInput extends Component {
 
   handleEdit = async (event) => {
     event.preventDefault();
-    // const { title, author } = this.state;
     const {bookId} = this.props.match.params;
     const { title, author } = this.state;
     try{
