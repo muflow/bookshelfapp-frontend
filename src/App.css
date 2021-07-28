@@ -1,0 +1,77 @@
+body {
+  background-color: #eee7e1;
+  color: #645853;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+.primary-button {
+  text-align: center;
+  background: #645853;
+  border: 1px solid #62382c;
+  color: #eee7e1;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* transition: 0.3s ease background; */
+  width: 60vw;
+  
+}
+
+.secondary-button {
+    background: none;
+    border: 1px solid #645853;
+    color: #645853;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* transition: 0.3s ease background; */
+    width: 60vw;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  
+}
+
+form {
+  /* margin: 30px auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  color: rgb(121, 121, 121);
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+form input {
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5vh;
+  color: #1D1D1D;
+  background-color: #D4D1CC;
+  border: 1px solid #D4D1CC;
+}
+

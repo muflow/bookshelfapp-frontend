@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import apiClient from '../lib/apiClient';
 
+import './BookCard.css'
+import book from '../imgs/new-book.png'
+
 class BookCard extends React.Component {
   constructor(props) {
     super(props);
@@ -43,10 +46,15 @@ class BookCard extends React.Component {
     render() {
     const { title, author, _id } = this.props.book;
     return (
-      <div>
-      <Link to={`/books/${_id}`}><h3>Title: {title}</h3></Link>
-      <p>Author: {author}</p>
-      {this.state.fav === false ? <button onClick={this.addToFavs}>Add to Favorite</button> : <p>Book is on favourite list. <Link to="/favs">See your favourite books</Link></p>}
+      <div className="card-container">
+        <div className="book-img-container">
+          <img src={book} alt="new book" />
+        </div>
+        <div className="book-data">
+          <Link to={`/books/${_id}`} style={{ textDecoration: 'none' }}><h3>Title: {title}</h3></Link>
+          <p>by {author}</p>
+          {this.state.fav === false ? <button className="add-favs-btn" onClick={this.addToFavs}>Add to Favorite</button> : <p>Book is on favourite list. <Link to="/favs">See your favourite books</Link></p>}
+        </div>
       </div>
     );
   }

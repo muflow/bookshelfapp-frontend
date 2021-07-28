@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../providers/AuthProvider";
 
+import "../App.css";
+
 class Signup extends Component {
   constructor(props) {
     super(props)
@@ -41,7 +43,7 @@ class Signup extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Signup" />
+          <input className="primary-button" type="submit" value="Signup" />
         </form>
         <p>
           Already have account?

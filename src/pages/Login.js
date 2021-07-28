@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import "../App.css";
 import { withAuth } from "../providers/AuthProvider";
 
 
@@ -43,7 +45,7 @@ class Login extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <input type="submit" value="Login" />
+        <input className="secondary-button" type="submit" value="Login" />
       </form>
     );
   }

@@ -9,7 +9,7 @@ class AddBookInput extends Component {
     super(props);
     this.state = {
       title: "",
-      author: ""
+      author: "",
     };
   };
   
@@ -41,11 +41,29 @@ class AddBookInput extends Component {
       <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title</label>
                     <input type="text" name="title" id="title" value={title} onChange={this.handleChange} />
-                    <br/>
+                    <br/><br/>
 
                     <label htmlFor="author">Author</label>
                     <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
                     <br/>
+
+                    <label htmlFor='category'>Category</label>
+                    <select className="select-category" name='category' id='category'>
+                      <option value=' '>--</option>
+                      <option value='Art'>Art</option>
+                      <option value='Biography'>Biography</option>
+                      <option value='Comics'>Comics</option>
+                      <option value='Crime'>Crime</option>
+                      <option value='Fantasy'>Fantasy</option>
+                      <option value='Thriller'>Thriller</option>
+                      <option value='Travel'>Travel</option>
+                    </select>
+                    <br/>
+
+                    <label htmlFor='description'>Description</label>
+                    <textarea type='text' rows='4' cols='40' id='description' name='description'></textarea>
+                    
+                    <br/><br/>
                     <button type="submit">Add new book</button>
              </form>  
     )

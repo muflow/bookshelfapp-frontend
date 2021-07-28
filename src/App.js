@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import './App.css';
+
 // import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
@@ -27,7 +29,7 @@ class App extends Component {
 		}
 		return (
 			<div className="container">
-				<h1>My Books app</h1>
+				<h1>My Bookshelf</h1>
 				{/* <Navbar /> */}
 				<Switch>
 					<Route exact path="/books" component={Home} />

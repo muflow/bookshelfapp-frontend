@@ -39,8 +39,8 @@ class ApiClient {
 	}
 
 	createBook(book) {
-	const {title, author} = book;
-		return this.apiClient.post("/books", { title, author }).then(({ data }) => data);
+	const {title, author, image, category} = book;
+		return this.apiClient.post("/books", { title, author, image, category }).then(({ data }) => data);
 	}
 
 	deleteOneBook(id) {

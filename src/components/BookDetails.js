@@ -39,13 +39,14 @@ class BookDetails extends React.Component {
   }
   
   render() {
-    const { title, author, _id } = this.state.book;
+    const { title, author, image, category, description, _id } = this.state.book;
     return (
       <div>
+      <p>img: {image}</p>
       <h3>Title: {title}</h3>
       <p>Author: {author}</p>
-      <p>Descritpion: </p>
-      <p>Category: </p>
+      <p>Category: {category}</p>
+      <p>Description: {description}</p>
       <Link to={`/books/edit/${_id}`}>Edit book</ Link>
       <button onClick={() => this.handleDelete(this.props.id)}>Delete book</button>
       </div>

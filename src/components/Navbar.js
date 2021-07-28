@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import "../App.css";
+
 import { withAuth } from '../providers/AuthProvider';
 
 class Navbar extends Component {
@@ -15,8 +17,13 @@ class Navbar extends Component {
 					</>
 				) : (
 					<>
-						<Link to="/login">Login</Link>
-						<Link to="/signup">Signup</Link>
+						<Link to="/signup" className="primary-button">Signup</Link>
+						<br/>
+						<br/>
+						<div>
+						<Link to="/login" className="secondary-button">Login</Link>
+						</div>
+						
 					</>
 				)}
 			</div>
