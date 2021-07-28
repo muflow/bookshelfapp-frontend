@@ -39,10 +39,10 @@ class BookDetails extends React.Component {
   }
   
   render() {
-    const { title, author, image, category, description, _id } = this.state.book;
+    const { title, author, imgUrl, category, description, _id } = this.state.book;
     return (
       <div>
-      <p>img: {image}</p>
+      <img width="200px" src={imgUrl} alt={title} />
       <h3>Title: {title}</h3>
       <p>Author: {author}</p>
       <p>Category: {category}</p>

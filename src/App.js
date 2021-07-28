@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Private from './pages/Private';
@@ -30,9 +30,9 @@ class App extends Component {
 		return (
 			<div className="container">
 				<h1>My Bookshelf</h1>
-				{/* <Navbar /> */}
+				{this.props.isLoggedIn && <Navbar />}
 				<Switch>
-					<Route exact path="/books" component={Home} />
+					<PrivateRoute exact path="/books" component={Home} />
 					<PrivateRoute exact path="/profile" component={Profile} />
 					<AnonRoute path="/signup" component={Signup} />
 					<AnonRoute path="/login" component={Login} />

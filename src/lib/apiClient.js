@@ -14,8 +14,9 @@ class ApiClient {
 	}
 
 	signup(user) {
-		const { username, password } = user;
-		return this.apiClient.post('/signup', { username, password }).then(({ data }) => data);
+		console.log(user)
+		const { username, password, email } = user;
+		return this.apiClient.post('/signup', { username, password, email }).then(({ data }) => data);
 	}
 
 	login(user) {
@@ -39,8 +40,8 @@ class ApiClient {
 	}
 
 	createBook(book) {
-	const {title, author, image, category} = book;
-		return this.apiClient.post("/books", { title, author, image, category }).then(({ data }) => data);
+	const { title, author, category, description, imgUrl } = book;
+		return this.apiClient.post("/books", { title, author, category, description, imgUrl  }).then(({ data }) => data);
 	}
 
 	deleteOneBook(id) {
@@ -48,8 +49,8 @@ class ApiClient {
 	}
 
 	editOneBook(id, body) {
-		const { title, author } = body;
-		return this.apiClient.put(`/books/${id}`, { title, author }).then(({ data }) => data);
+		const { title, author, imgUrl, category, description } = body;
+		return this.apiClient.put(`/books/${id}`, { title, author, imgUrl, category, description }).then(({ data }) => data);
 	}
 
 	addToFavs(id) {

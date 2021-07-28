@@ -29,10 +29,10 @@ class UserProfile extends React.Component {
   
   
   render() {
-  const { username, email, } = this.props.user;
+  const { username, email } = this.props.user;
     return (
       <div>
-        Hello {username}
+        Hello {username}{' '}
         tu email es {email}
       </div>
     )

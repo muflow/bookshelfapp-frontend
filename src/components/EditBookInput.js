@@ -7,7 +7,10 @@ class EditBookInput extends Component {
     this.state = {
       book: {},
       title: "",
-      author: ""
+      author: "",
+      description: "",
+      category: "",
+      imgUrl: ""
     }
   }
 
@@ -20,7 +23,10 @@ class EditBookInput extends Component {
       this.setState({
         book: oneBook.found,
         title: oneBook.found.title,
-        author: oneBook.found.author
+        author: oneBook.found.author,
+        description: oneBook.found.description,
+        category: oneBook.found.category,
+        imgUrl: oneBook.found.imgUrl
       })
 
     }
@@ -32,15 +38,14 @@ class EditBookInput extends Component {
   handleEdit = async (event) => {
     event.preventDefault();
     const {bookId} = this.props.match.params;
-    const { title, author } = this.state;
+    const { title, author, description, imgUrl, category } = this.state;
     try{
-      const editBook = await apiClient.editOneBook(bookId, { title, author});
+      const editBook = await apiClient.editOneBook(bookId, { title, author, description, imgUrl, category });
       console.log(editBook)
     }
     catch (error) {
           console.log(error)
         } finally {
-        
           this.props.history.push("/books");
         }
   }
@@ -51,7 +56,7 @@ class EditBookInput extends Component {
   }
 
   render() {
-    const { title, author } = this.state;
+    const { title, author, imgUrl, category, description } = this.state;
     return (
       <form onSubmit={this.handleEdit}> 
                     <label htmlFor="title">Title</label>
@@ -61,6 +66,19 @@ class EditBookInput extends Component {
                     <label htmlFor="author">Author</label>
                     <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
                     <br/>
+
+                    <label htmlFor="imgUrl">Image url</label>
+                    <input type="text" name="imgUrl" id="imgurl" value={imgUrl} onChange={this.handleChange} />
+                    <br/>
+                    
+                    <label htmlFor="category">Category</label>
+                    <input type="text" name="category" id="category" value={category} onChange={this.handleChange} />
+                    <br/>
+
+                    <label htmlFor="description">Description</label>
+                    <input type="text" name="description" id="description" value={description} onChange={this.handleChange} />
+                    <br/>
+
                     <button type="submit">Save Changes</button>
              </form>  
     )

@@ -12,7 +12,10 @@ class Navbar extends Component {
 			<div>
 				{isLoggedIn ? (
 					<>
-						<p>username: {user.username}</p>
+						<p>Welcome {user.username}</p>
+						<Link to="/books/new" className="primary-button">Create book</Link>
+						<Link to="/favs" className="primary-button">Favourite books</Link>
+						<Link to="/profile" className="primary-button">Profile</Link>
 						<button onClick={logout}>Logout</button>
 					</>
 				) : (

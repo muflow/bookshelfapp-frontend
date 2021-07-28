@@ -10,16 +10,18 @@ class AddBookInput extends Component {
     this.state = {
       title: "",
       author: "",
+      category: "",
+      description: "",
+      imgUrl: ""
     };
   };
   
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        const { title, author } = this.state;
+        const { title, author, category, description, imgUrl } = this.state;
         try{
-          await apiClient.createBook({title, author});
-          
+          await apiClient.createBook({title, author, category, description, imgUrl});
       }
         catch (error) {
           console.log(error)
@@ -36,7 +38,7 @@ class AddBookInput extends Component {
   }
 
   render() {
-    const { title, author } = this.state;
+    const { title, author, description, imgUrl, category } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title</label>
@@ -46,8 +48,20 @@ class AddBookInput extends Component {
                     <label htmlFor="author">Author</label>
                     <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
                     <br/>
+                    
+                    <label htmlFor="imgUrl">Image url</label>
+                    <input type="text" name="imgUrl" id="imgurl" value={imgUrl} onChange={this.handleChange} />
+                    <br/>
+                    
+                    <label htmlFor="category">Category</label>
+                    <input type="text" name="category" id="category" value={category} onChange={this.handleChange} />
+                    <br/>
 
-                    <label htmlFor='category'>Category</label>
+                    <label htmlFor="description">Description</label>
+                    <input type="text" name="description" id="description" value={description} onChange={this.handleChange} />
+                    <br/>
+
+                    {/* <label htmlFor='category'>Category</label>
                     <select className="select-category" name='category' id='category'>
                       <option value=' '>--</option>
                       <option value='Art'>Art</option>
@@ -58,10 +72,10 @@ class AddBookInput extends Component {
                       <option value='Thriller'>Thriller</option>
                       <option value='Travel'>Travel</option>
                     </select>
-                    <br/>
+                    <br/> */}
 
-                    <label htmlFor='description'>Description</label>
-                    <textarea type='text' rows='4' cols='40' id='description' name='description'></textarea>
+                    {/* <label htmlFor='description'>Description</label>
+                    <textarea type='text' rows='4' cols='40' id='description' name='description' value={description}></textarea> */}
                     
                     <br/><br/>
                     <button type="submit">Add new book</button>
