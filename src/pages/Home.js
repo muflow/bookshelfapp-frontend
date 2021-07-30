@@ -2,6 +2,9 @@ import React from 'react';
 
 import apiClient from '../lib/apiClient';
 import BookCard from '../components/BookCard';
+import { Link } from 'react-router-dom'
+
+import './Home.css'
 
 class Home extends React.Component {
   constructor(props) {
@@ -40,8 +43,9 @@ class Home extends React.Component {
       return (
         <>
         <div>
-				<input className='input' type='text' name='search' value={this.state.search} onChange={this.handleChange} placeholder='Search' />
-				<br/>
+        <h1>My Books</h1>
+				{/* <input className='input' type='text' name='search' value={this.state.search} onChange={this.handleChange} placeholder='Search' />
+				<br/> */}
 
         {books.map(book => {
 					return (
@@ -49,8 +53,15 @@ class Home extends React.Component {
             />
           );
 				})}
+        
 
         </div>
+        
+        <div>
+<i className="float"><Link to="/books/new" style={{ textDecoration: 'none' }} className="fa fa-plus my-float" /></i>
+
+
+</div>
         </>
       )
     }

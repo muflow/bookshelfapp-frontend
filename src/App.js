@@ -29,7 +29,7 @@ class App extends Component {
 		}
 		return (
 			<div className="container">
-				<h1>My Bookshelf</h1>
+				{/* <h1>My Bookshelf</h1> */}
 				{this.props.isLoggedIn && <Navbar />}
 				<Switch>
 					<PrivateRoute exact path="/books" component={Home} />

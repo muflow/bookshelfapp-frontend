@@ -1,0 +1,49 @@
+/* appBar bottom */
+.navbar{
+  overflow: hidden;
+  background-color: #efeae5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#menu {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+/* home menu icon */
+#home {
+  fill: #aea7a8;
+}
+
+a:focus #home {
+  fill: #63573c;
+}
+
+/* favs menu icon */
+#favs {
+  fill: #aea7a8;
+}
+a:focus #favs {
+  stroke: none;
+  fill: #63573c;
+}
+
+/* profile menu icon */
+#profile {
+  fill: #aea7a8;
+}
+a:focus #profile {
+  stroke: none;
+  fill: #63573c;
+}
+
+svg {
+  width: 26px;
+}

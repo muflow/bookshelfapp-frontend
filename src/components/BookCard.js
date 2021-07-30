@@ -44,7 +44,7 @@ class BookCard extends React.Component {
     }
   
     render() {
-    const { title, author, imgUrl, _id } = this.props.book;
+    const { title, author, category, imgUrl, _id } = this.props.book;
     return (
       <div className="card-container">
         <div className="book-img-container">
@@ -53,6 +53,7 @@ class BookCard extends React.Component {
         <div className="book-data">
           <h3>Title: <Link to={`/books/${_id}`} style={{ textDecoration: 'none' }}>{title}</Link></h3>
           <p>by {author}</p>
+          <p>by {category}</p>
           {this.state.fav === false ? <button className="add-favs-btn" onClick={this.addToFavs}>Add to Favorite</button> : <p>Book is on favourite list. <Link to="/favs">See your favourite books</Link></p>}
         </div>
       </div>

@@ -77,8 +77,14 @@ class AddBookInput extends Component {
                     {/* <label htmlFor='description'>Description</label>
                     <textarea type='text' rows='4' cols='40' id='description' name='description' value={description}></textarea> */}
                     
-                    <br/><br/>
+                    
                     <button type="submit">Add new book</button>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
              </form>  
     )
   }

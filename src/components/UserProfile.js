@@ -1,5 +1,7 @@
 import React from 'react';
 import { withAuth } from '../providers/AuthProvider';
+
+import { Link } from 'react-router-dom';
 // import apiClient from '../lib/apiClient';
 
 class UserProfile extends React.Component {
@@ -29,11 +31,31 @@ class UserProfile extends React.Component {
   
   
   render() {
+  const { isLoggedIn, logout } = this.props;
   const { username, email } = this.props.user;
     return (
       <div>
         Hello {username}{' '}
         tu email es {email}
+
+        {isLoggedIn ? (
+					<>
+						{/* <p>Welcome {user.username}</p> */}
+						
+						<button onClick={logout}>Logout</button>
+					</>
+				) : (
+					<>
+						<Link to="/signup" className="primary-button">Signup</Link>
+						<br/>
+						<br/>
+						<div>
+						<Link to="/login" className="secondary-button">Login</Link>
+						</div>
+						
+					</>
+				)}
+        
       </div>
     )
   }
