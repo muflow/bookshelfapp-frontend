@@ -58,10 +58,12 @@ class Home extends React.Component {
         </div>
         
         <div>
-<i className="float"><Link to="/books/new" style={{ textDecoration: 'none' }} className="fa fa-plus my-float" /></i>
-
-
-</div>
+          <i className="float"><Link to="/books/new" style={{ textDecoration: 'none' }} className="fa fa-plus my-float" /></i>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         </>
       )
     }
