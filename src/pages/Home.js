@@ -15,14 +15,16 @@ class Home extends React.Component {
 		}
   }
 
-	componentDidMount() {
-		apiClient.findAllBooks().then(({ found: books }) => {
+	componentDidMount = async() => {
+		try {
+      const books = await apiClient.findAllBooks();
 			this.setState({
-				books,
+				books: books.found
 			})
-      
-		})
-		}
+    } catch(e){
+      console.log(e)
+    }
+  }
 
 		 handleChange = event => {
         const value = event.target.value;
