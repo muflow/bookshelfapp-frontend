@@ -51,10 +51,10 @@ class BookCard extends React.Component {
           <img src={imgUrl} alt="new book" />
         </div>
         <div className="book-data">
-          <h3>Title: <Link to={`/books/${_id}`} style={{ textDecoration: 'none' }}>{title}</Link></h3>
+          <h4><Link to={`/books/${_id}`} style={{ textDecoration: 'none', color: '#000' }}>{title}</Link></h4>
           <p>by {author}</p>
-          <p>by {category}</p>
-          {this.state.fav === false ? <button className="add-favs-btn" onClick={this.addToFavs}>Add to Favorite</button> : <p>Book is on favourite list. <Link to="/favs">See your favourite books</Link></p>}
+          <p>{category}</p>
+          {this.state.fav === false ? <button className="add-favs-btn" onClick={this.addToFavs}>Add to Favorite</button> : <p>Book is on favourite list.</p>}
         </div>
       </div>
     );

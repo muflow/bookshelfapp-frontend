@@ -2,13 +2,17 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h3, p {
+  color: black;
+}
 
 .card-container {
-  background-color: #efeae5;
+  background-color: #dfdece;
   width: 90%;
   margin: 0 auto;
-  padding: 6px+;
-  
+  padding: 6px;
+  margin-bottom: 15px;
+
   box-shadow: 2px 2px 3px #999;
 }
 
@@ -25,6 +29,7 @@ body {
   background-color: #c6c98a;
 }
 
-.book-data {
-  color: #eee7e1;
+.add-favs-btn {
+  background-color: green;
+  padding: 5px 10px;
 }

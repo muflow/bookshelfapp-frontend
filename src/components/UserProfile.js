@@ -3,6 +3,8 @@ import { withAuth } from '../providers/AuthProvider';
 
 import { Link } from 'react-router-dom';
 // import apiClient from '../lib/apiClient';
+import './UserProfile.css'
+import profilepic from '../imgs/user.png'
 
 class UserProfile extends React.Component {
   // constructor(props) {
@@ -35,6 +37,7 @@ class UserProfile extends React.Component {
   const { username, email } = this.props.user;
     return (
       <div>
+        <img className="profile-pic" src={profilepic} alt="user" />
         Hello {username}{' '}
         tu email es {email}
 
