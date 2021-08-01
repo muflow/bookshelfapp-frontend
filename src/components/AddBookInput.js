@@ -40,26 +40,28 @@ class AddBookInput extends Component {
   render() {
     const { title, author, description, imgUrl, category } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <>
+      <h1>Add a new book</h1>
+      <form className="create-book" onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title</label>
                     <input type="text" name="title" id="title" value={title} onChange={this.handleChange} />
-                    <br/><br/>
+                    
 
                     <label htmlFor="author">Author</label>
                     <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
-                    <br/>
+                    
                     
                     <label htmlFor="imgUrl">Image url</label>
                     <input type="text" name="imgUrl" id="imgurl" value={imgUrl} onChange={this.handleChange} />
-                    <br/>
+                    
                     
                     <label htmlFor="category">Category</label>
                     <input type="text" name="category" id="category" value={category} onChange={this.handleChange} />
-                    <br/>
+                    
 
                     <label htmlFor="description">Description</label>
                     <input type="text" name="description" id="description" value={description} onChange={this.handleChange} />
-                    <br/>
+                    
 
                     {/* <label htmlFor='category'>Category</label>
                     <select className="select-category" name='category' id='category'>
@@ -78,14 +80,15 @@ class AddBookInput extends Component {
                     <textarea type='text' rows='4' cols='40' id='description' name='description' value={description}></textarea> */}
                     
                     
-                    <button type="submit">Add new book</button>
+                    <button className="primary-button" type="submit">Add new book</button>
                     <br/>
                     <br/>
                     <br/>
                     <br/>
                     <br/>
                     <br/>
-             </form>  
+             </form>
+             </>
     )
   }
 };

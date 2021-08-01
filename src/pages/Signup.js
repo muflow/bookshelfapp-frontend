@@ -56,7 +56,7 @@ class Signup extends Component {
         </form>
         <p>
           Already have account?
-          <Link to={"/login"}> Login</Link>
+          <Link to={"/login"} style={{ color: '#000' }}> Login</Link>
         </p>
       </div>
     );

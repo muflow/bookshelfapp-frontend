@@ -3,6 +3,8 @@ import apiClient from '../lib/apiClient';
 
 import { Link } from 'react-router-dom';
 
+import './BookDetails.css'
+
 class BookDetails extends React.Component {
   constructor(props) {
     super(props)
@@ -41,15 +43,24 @@ class BookDetails extends React.Component {
   render() {
     const { title, author, imgUrl, category, description, _id } = this.state.book;
     return (
-      <div>
+      <>
+      <div className="cover-img-container">
       <img width="200px" src={imgUrl} alt={title} />
-      <h3>Title: {title}</h3>
-      <p>Author: {author}</p>
-      <p>Category: {category}</p>
-      <p>Description: {description}</p>
-      <Link to={`/books/edit/${_id}`}>Edit book</ Link>
-      <button onClick={() => this.handleDelete(this.props.id)}>Delete book</button>
       </div>
+      <div className="details-container">
+      <h3>{title}</h3>
+      <p>by {author}</p>
+      <p>__________</p>
+      <p>Category: {category}</p>
+      <p className="desc-field">Description: {description}</p>
+      {/* <Link to={`/books/edit/${_id}`}>Edit book</ Link> */}
+      
+      <div className="detail-icons">
+      <Link to={`/books/edit/${_id}`} style={{ color: '#645853' }}><i className="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></Link>
+      <i className="fa fa-trash-o fa-2x" aria-hidden="true" onClick={() => this.handleDelete(this.props.id)}></i>
+      </div>
+      </div>
+      </>
     );
   }
 }

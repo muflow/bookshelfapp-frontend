@@ -36,7 +36,7 @@ class UserProfile extends React.Component {
   const { isLoggedIn, logout } = this.props;
   const { username, email } = this.props.user;
     return (
-      <div>
+      <div className="profile-card-container">
         <img className="profile-pic" src={profilepic} alt="user" />
         Hello {username}{' '}
         tu email es {email}
@@ -45,7 +45,7 @@ class UserProfile extends React.Component {
 					<>
 						{/* <p>Welcome {user.username}</p> */}
 						
-						<button onClick={logout}>Logout</button>
+						<button className="primary-button" onClick={logout}>Logout</button>
 					</>
 				) : (
 					<>

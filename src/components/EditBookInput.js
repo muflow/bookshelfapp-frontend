@@ -58,29 +58,27 @@ class EditBookInput extends Component {
   render() {
     const { title, author, imgUrl, category, description } = this.state;
     return (
+      <>
+      <h1>Edit Book</h1>
       <form onSubmit={this.handleEdit}> 
                     <label htmlFor="title">Title</label>
                     <input type="text" name="title" id="title" value={title} onChange={this.handleChange} />
-                    <br/>
-
+                    
                     <label htmlFor="author">Author</label>
                     <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
-                    <br/>
-
+                    
                     <label htmlFor="imgUrl">Image url</label>
                     <input type="text" name="imgUrl" id="imgurl" value={imgUrl} onChange={this.handleChange} />
-                    <br/>
-                    
+                                        
                     <label htmlFor="category">Category</label>
                     <input type="text" name="category" id="category" value={category} onChange={this.handleChange} />
-                    <br/>
-
+                    
                     <label htmlFor="description">Description</label>
                     <input type="text" name="description" id="description" value={description} onChange={this.handleChange} />
-                    <br/>
-
-                    <button type="submit">Save Changes</button>
-             </form>  
+                    
+                    <button className="primary-button" type="submit">Save Changes</button>
+             </form> 
+    </>
     )
   }
 }
