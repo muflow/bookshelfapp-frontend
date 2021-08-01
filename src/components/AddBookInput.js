@@ -22,11 +22,10 @@ class AddBookInput extends Component {
         const { title, author, category, description, imgUrl } = this.state;
         try{
           await apiClient.createBook({title, author, category, description, imgUrl});
-      }
+        }
         catch (error) {
           console.log(error)
         } finally {
-        
           this.props.history.push("/books");
         }
         
