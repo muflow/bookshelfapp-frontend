@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import apiClient from '../lib/apiClient';
+import { Link } from 'react-router-dom';
 
 // import { withRouter } from "react-router-dom";
 
@@ -40,6 +41,7 @@ class AddBookInput extends Component {
     const { title, author, description, imgUrl, category } = this.state;
     return (
       <>
+      <Link to="/books" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
       <h1>Add a new book</h1>
       <form className="create-book" onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title</label>

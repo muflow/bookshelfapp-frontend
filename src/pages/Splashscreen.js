@@ -13,6 +13,7 @@ class Splashscreen extends React.Component {
       <div className="splash-container">
         <div className="logo">
           <img src={logo} alt="logo" />
+          <p className="p-off">Take your readings everywhere</p>
         </div>
         <div>
           <Navbar />

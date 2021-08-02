@@ -1,9 +1,14 @@
 .splash-container {
-  margin-top: 250px;
+  margin-top: 220px;
 }
-
 
 .logo img {
   width: 280px;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
+}
+
+.p-off {
+  margin-top: 10px;
+  padding-top: 0px;
+  margin-bottom: 50px;
 }

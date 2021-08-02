@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import './App.css';
+import status from './imgs/status.png'
 
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
@@ -29,6 +30,7 @@ class App extends Component {
 		}
 		return (
 			<div className="container">
+			<img src={status} style={{ paddingTop: '5px'}} alt="status-bar" />
 				{/* <h1>My Bookshelf</h1> */}
 				{this.props.isLoggedIn && <Navbar />}
 				<Switch>
