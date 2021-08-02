@@ -38,8 +38,9 @@ class UserProfile extends React.Component {
     return (
       <div className="profile-card-container">
         <img className="profile-pic" src={profilepic} alt="user" />
-        Hello {username}{' '}
-        tu email es {email}
+        <h2>Hello {username}{' '}</h2>
+        <p>Your e-mail is:</p>
+        <h3>{email}</h3>
 
         {isLoggedIn ? (
 					<>
@@ -50,8 +51,6 @@ class UserProfile extends React.Component {
 				) : (
 					<>
 						<Link to="/signup" className="primary-button">Signup</Link>
-						<br/>
-						<br/>
 						<div>
 						<Link to="/login" className="secondary-button">Login</Link>
 						</div>

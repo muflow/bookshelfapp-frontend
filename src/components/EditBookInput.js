@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import apiClient from '../lib/apiClient';
+import { Link } from 'react-router-dom';
 
 class EditBookInput extends Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class EditBookInput extends Component {
     const { title, author, imgUrl, category, description } = this.state;
     return (
       <>
+      <Link to="/books" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
       <h1>Edit Book</h1>
       <form onSubmit={this.handleEdit}> 
                     <label htmlFor="title">Title</label>

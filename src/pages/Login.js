@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 import "../App.css";
 import { withAuth } from "../providers/AuthProvider";
@@ -30,7 +31,9 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <form onSubmit={this.handleFormSubmit}>
+      <>
+      <Link to="/" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
+      <form className="auth-from" onSubmit={this.handleFormSubmit}>
         <label>Username:</label>
         <input
           type="text"
@@ -47,6 +50,7 @@ class Login extends Component {
         />
         <input className="secondary-button" type="submit" value="Login" />
       </form>
+      </>
     );
   }
 }

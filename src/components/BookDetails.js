@@ -44,7 +44,9 @@ class BookDetails extends React.Component {
     const { title, author, imgUrl, category, description, _id } = this.state.book;
     return (
       <>
+      
       <div className="cover-img-container">
+      <Link to="/books" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
       <img width="200px" src={imgUrl} alt={title} />
       </div>
       <div className="details-container">
@@ -56,7 +58,7 @@ class BookDetails extends React.Component {
       {/* <Link to={`/books/edit/${_id}`}>Edit book</ Link> */}
       
       <div className="detail-icons">
-      <Link to={`/books/edit/${_id}`} style={{ color: '#645853' }}><i className="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></Link>
+      <Link to={`/books/edit/${_id}`} style={{ color: 'green' }}><i className="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></Link>
       <i className="fa fa-trash-o fa-2x" aria-hidden="true" onClick={() => this.handleDelete(this.props.id)}></i>
       </div>
       </div>

@@ -76,6 +76,7 @@ form label {
   text-align: center;
   width: 100%;
 }
+
 form input {
   box-sizing: border-box;
   border-radius: 4px;
@@ -87,4 +88,23 @@ form input {
   color: #1D1D1D;
   background-color: #D4D1CC;
   border: 1px solid #D4D1CC;
+}
+
+.auth-from {
+  /* margin: 30px auto; */
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* back arrow */
+.fa-angle-left {
+  display: block;
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 20px;
 }

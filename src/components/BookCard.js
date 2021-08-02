@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import apiClient from '../lib/apiClient';
 
 import './BookCard.css'
-// import book from '../imgs/new-book.png'
 
 class BookCard extends React.Component {
   constructor(props) {
@@ -48,13 +47,13 @@ class BookCard extends React.Component {
     return (
       <>
       <div className="card-container">
-        <Link to={`/books/${_id}`} style={{ textDecoration: 'none', color: 'green' }}>
+        <Link to={`/books/${_id}`} style={{ textDecoration: 'none', color: '#645853' }}>
         <div className="book-img-container">
           <img src={imgUrl} alt="new book" />
         </div>
         </Link>
           <div className="book-data">
-          <h3><Link to={`/books/${_id}`} style={{ textDecoration: 'none', color: 'green' }}>{title}</Link></h3>
+          <h3><Link to={`/books/${_id}`} style={{ textDecoration: 'none', color: '#645853' }}>{title}</Link></h3>
           <p className="p-auth">by {author}</p>
           {this.state.fav === false ? <button className="add-favs-btn" onClick={this.addToFavs}>Add to Favorite</button> : <p>Book is on favourite list.</p>}
         </div>

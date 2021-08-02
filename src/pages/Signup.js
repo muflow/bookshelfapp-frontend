@@ -29,8 +29,9 @@ class Signup extends Component {
   render() {
     const { username, password, email } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <>
+      <Link to="/" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
+        <form className="auth-from" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input
             type="text"
@@ -58,7 +59,7 @@ class Signup extends Component {
           Already have account?
           <Link to={"/login"} style={{ color: '#000' }}> Login</Link>
         </p>
-      </div>
+      </>
     );
   }
 }
