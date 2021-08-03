@@ -16,9 +16,9 @@ import Home from './pages/Home';
 import Favs from './pages/Favs'
 import Profile from './pages/Porfile';
 import BookDetails from './components/BookDetails';
-import EditBookInput from './components/EditBookInput'
-
+import EditBookInput from './components/EditBookInput';
 import AddBookInput from './components/AddBookInput';
+import PageNotFound from './components/404-page'
 
 class App extends Component {
 		
@@ -45,8 +45,9 @@ class App extends Component {
 					<PrivateRoute exact path="/favs" component={Favs} />
 					<PrivateRoute path="/private" component={Private} />
 					<PrivateRoute path="/profile" component={Profile} />
-					<Route path="/" component={Splashscreen} />
+					<Route exact path="/" component={Splashscreen} />
 					<Route path="/favorites" component={Favs} />
+					<Route component={PageNotFound} />
 				</Switch>
 			</div>
 		);
