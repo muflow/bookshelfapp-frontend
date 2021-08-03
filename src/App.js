@@ -29,9 +29,10 @@ class App extends Component {
 			return <div>loading ... </div>;
 		}
 		return (
-			<div className="container">
-			<img src={status} className="status-bar" style={{ paddingTop: '5px'}} alt="status-bar" />
-				{/* <h1>My Bookshelf</h1> */}
+			<div className="app-container">
+			<div className="status-bar">
+			<img src={status} alt="status-bar" />
+			</div>
 				{this.props.isLoggedIn && <Navbar />}
 				<Switch>
 					<PrivateRoute exact path="/books" component={Home} />

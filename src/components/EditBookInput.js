@@ -60,26 +60,28 @@ class EditBookInput extends Component {
     const { title, author, imgUrl, category, description } = this.state;
     return (
       <>
+      <div className="edit-container">
       <Link to="/books" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
       <h1>Edit Book</h1>
       <form onSubmit={this.handleEdit}> 
-                    <label htmlFor="title">Title</label>
-                    <input type="text" name="title" id="title" value={title} onChange={this.handleChange} />
-                    
-                    <label htmlFor="author">Author</label>
-                    <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
-                    
-                    <label htmlFor="imgUrl">Image url</label>
-                    <input type="text" name="imgUrl" id="imgurl" value={imgUrl} onChange={this.handleChange} />
-                                        
-                    <label htmlFor="category">Category</label>
-                    <input type="text" name="category" id="category" value={category} onChange={this.handleChange} />
-                    
-                    <label htmlFor="description">Description</label>
-                    <input type="text" name="description" id="description" value={description} onChange={this.handleChange} />
-                    
-                    <button className="primary-button" type="submit">Save Changes</button>
-             </form> 
+        <label htmlFor="title">Title</label>
+        <input type="text" name="title" id="title" value={title} onChange={this.handleChange} />
+        
+        <label htmlFor="author">Author</label>
+        <input type="text" name="author" id="author" value={author} onChange={this.handleChange} />
+        
+        <label htmlFor="imgUrl">Image url</label>
+        <input type="text" name="imgUrl" id="imgurl" value={imgUrl} onChange={this.handleChange} />
+                            
+        <label htmlFor="category">Category</label>
+        <input type="text" name="category" id="category" value={category} onChange={this.handleChange} />
+        
+        <label htmlFor="description">Description</label>
+        <input type="text" name="description" id="description" value={description} onChange={this.handleChange} />
+        
+        <button className="primary-button" type="submit">Save Changes</button>
+      </form>
+      </div>
     </>
     )
   }
