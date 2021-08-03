@@ -30,7 +30,7 @@ class App extends Component {
 		}
 		return (
 			<div className="container">
-			<img src={status} style={{ paddingTop: '5px'}} alt="status-bar" />
+			<img src={status} className="status-bar" style={{ paddingTop: '5px'}} alt="status-bar" />
 				{/* <h1>My Bookshelf</h1> */}
 				{this.props.isLoggedIn && <Navbar />}
 				<Switch>
