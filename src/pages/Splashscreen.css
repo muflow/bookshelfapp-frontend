@@ -12,3 +12,18 @@
   padding-top: 0px;
   margin-bottom: 50px;
 }
+
+.secondary-button-splashscreen {
+    background: none;
+    border: 1px solid #645853;
+    color: #645853;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* transition: 0.3s ease background; */
+    width: 60vw;
+}

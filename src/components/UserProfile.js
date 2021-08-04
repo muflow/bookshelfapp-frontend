@@ -29,9 +29,7 @@ class UserProfile extends React.Component {
   //       }
 
   // }
-  
-  
-  
+   
   render() {
   const { isLoggedIn, logout } = this.props;
   const { username, email } = this.props.user;

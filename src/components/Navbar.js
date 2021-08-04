@@ -54,7 +54,7 @@ class Navbar extends Component {
 						<br/>
 						<br/>
 						<div>
-						<Link to="/login" className="secondary-button">Login</Link>
+						<Link to="/login" className="secondary-button-splashscreen">Login</Link>
 						</div>
 						
 					</>
