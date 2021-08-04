@@ -47,7 +47,7 @@ class App extends Component {
 					<PrivateRoute path="/profile" component={Profile} />
 					<Route exact path="/" component={Splashscreen} />
 					<Route path="/favorites" component={Favs} />
-					<Route component={PageNotFound} />
+					<Route path="" component={PageNotFound} />
 				</Switch>
 			</div>
 		);
