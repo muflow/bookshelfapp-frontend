@@ -46,7 +46,7 @@ class BookDetails extends React.Component {
       <>
       
       <div className="cover-img-container">
-      <Link to="/books" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
+      <Link to="/books" style={{ textDecoration: 'none', color:'#63573c' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
       <img width="200px" src={imgUrl} alt={title} />
       </div>
       <div className="details-container">

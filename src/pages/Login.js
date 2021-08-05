@@ -60,7 +60,7 @@ class Login extends Component {
     const { username, password, errors } = this.state;
     return (
       <>
-      <Link to="/" style={{ textDecoration: 'none' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
+      <Link to="/" style={{ textDecoration: 'none', color:'#63573c' }}><i className="fa fa-angle-left fa-2x" aria-hidden="true"></i></Link>
       <form className="auth-from" onSubmit={this.handleFormSubmit}>
         <label>Username:</label>
         <input className="auth-input"
