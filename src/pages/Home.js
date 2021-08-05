@@ -47,7 +47,7 @@ class Home extends React.Component {
         <div>
         <h1>My Books</h1>
 				{/* <input className='input' type='text' name='search' value={this.state.search} onChange={this.handleChange} placeholder='Search' />
-				<br/> */}
+				<br/> */}        
 
         {books.map(book => {
 					return (
